@@ -1,4 +1,4 @@
-export class register {
+export class Register {
     public date: Date;
     public contactName: string;
     public contactEmail: string;
