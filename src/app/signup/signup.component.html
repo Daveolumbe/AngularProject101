@@ -6,20 +6,20 @@
             <div>
                 <div class="form-content">
                     <div class="form-group">
-                        <input type="text" class="form-control input-underline input-lg" (ngModel)="userService.fullName" placeholder="Full Name">
+                        <input type="text" class="form-control input-underline input-lg" (ngModel)="userService.EstateName" placeholder="Full Name">
                     </div>
 
                     <div class="form-group">
-                        <input type="text" class="form-control input-underline input-lg" (ngModel)="userService.email" placeholder="Email">
+                        <input type="text" class="form-control input-underline input-lg" (ngModel)="userService.Email" placeholder="Email">
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control input-underline input-lg"  (ngModel)="userService.password" placeholder="Password">
+                        <input type="password" class="form-control input-underline input-lg"  (ngModel)="userService.Password" placeholder="Password">
                     </div>
                     <!--<div class="form-group">-->
                         <!--<input type="password" class="form-control input-underline input-lg"  placeholder="Repeat Password">-->
                     <!--</div>-->
                 </div>
-                <button class="btn rounded-btn" (click)="onSubmit($event)"> Register </button>&nbsp;
+                <button class="btn rounded-btn" (click)="onSubmit()"> Register </button>&nbsp;
                 <a class="btn rounded-btn" [routerLink]="['/login']"> Log in </a>
             </div>
         </div>

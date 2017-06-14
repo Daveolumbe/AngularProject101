@@ -14,12 +14,12 @@ export class SignupComponent {
     constructor(private userService: UserService, private router: Router) {
     }
 
-    onSubmit(event) {
+    onSubmit() {
         this.userService.create(this.model)
             .subscribe(
                 data => {
                  //   this.alertService.success('Registration successful', true);
-                    this.router.navigate(['/login']);
+                    this.router.navigate(['/dashboard']);
                 },
                 error => {
                   //  this.alertService.error(error);
