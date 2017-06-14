@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
+    msg = 'HI';
     constructor(public router: Router) { }
 
     ngOnInit() { }

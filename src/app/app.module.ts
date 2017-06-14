@@ -14,6 +14,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthGuard } from './shared';
 import {environment} from '../environments/environment';
+import {UserService} from './shared/services/user.service';
 
 
 
@@ -43,7 +44,7 @@ export function HttpLoaderFactory(http: Http) {
             }
         })
     ],
-    providers: [AuthGuard],
+    providers: [AuthGuard, UserService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
