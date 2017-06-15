@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {Router} from '@angular/router';
 import { AlertService, UserService } from '../shared/services/index';
 
@@ -16,7 +16,7 @@ export class SignupComponent {
     constructor(private userService: UserService, private alertService: AlertService, private router: Router) {
     }
 
-    onSubmit() {
+    register() {
         this.loading = true;
         console.log(this.model);
         this.userService.create(this.model)
