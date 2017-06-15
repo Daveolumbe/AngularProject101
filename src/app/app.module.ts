@@ -13,8 +13,9 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthGuard } from './shared';
+import {AlertService, UserService} from './shared/services/index';
 import {environment} from '../environments/environment';
-import {UserService} from './shared/services/user.service';
+
 
 
 
@@ -44,7 +45,7 @@ export function HttpLoaderFactory(http: Http) {
             }
         })
     ],
-    providers: [AuthGuard, UserService],
+    providers: [AuthGuard, AlertService, UserService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

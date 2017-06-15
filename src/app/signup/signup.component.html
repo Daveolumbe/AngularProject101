@@ -1,27 +1,27 @@
 <div class="login-page">
     <div class="row">
         <div class="col-md-4 push-md-4">
-            <img class="user-avatar" src="assets/images/logo.png" width="150px" />
+            <img class="user-avatar" src="assets/images/logo.png" width="150px" >
             <h1>Create Visilinx Dashboard</h1>
-            <div>
+            <form (ngSubmit)="onSubmit()" novalidate>
                 <div class="form-content">
                     <div class="form-group">
-                        <input type="text" class="form-control input-underline input-lg" (ngModel)="userService.EstateName" placeholder="Full Name">
+                        <input type="text" class="form-control input-underline input-lg" (ngModel)="model.EstateName"  placeholder="Full Name">
                     </div>
 
                     <div class="form-group">
-                        <input type="text" class="form-control input-underline input-lg" (ngModel)="userService.Email" placeholder="Email">
+                        <input type="text" class="form-control input-underline input-lg" (ngModel)="model.Email" placeholder="Email">
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control input-underline input-lg"  (ngModel)="userService.Password" placeholder="Password">
+                        <input type="password" class="form-control input-underline input-lg"  (ngModel)="model.Password" placeholder="Password">
                     </div>
                     <!--<div class="form-group">-->
                         <!--<input type="password" class="form-control input-underline input-lg"  placeholder="Repeat Password">-->
                     <!--</div>-->
                 </div>
-                <button class="btn rounded-btn" (click)="onSubmit()"> Register </button>&nbsp;
+                <button [disabled]="loading" class="btn rounded-btn"> Register </button>&nbsp;
                 <a class="btn rounded-btn" [routerLink]="['/login']"> Log in </a>
-            </div>
+            </form>
         </div>
     </div>
 </div>

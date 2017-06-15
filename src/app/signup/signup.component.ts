@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
-import {UserService} from '../shared/services/user.service';
+import { AlertService, UserService } from '../shared/services/index';
 
 
 
@@ -9,20 +9,25 @@ import {UserService} from '../shared/services/user.service';
     templateUrl: './signup.component.html',
     styleUrls: ['./signup.component.scss']
 })
+
 export class SignupComponent {
     model: any = {};
-    constructor(private userService: UserService, private router: Router) {
+    loading = false;
+    constructor(private userService: UserService, private alertService: AlertService, private router: Router) {
     }
 
     onSubmit() {
+        this.loading = true;
+        console.log(this.model);
         this.userService.create(this.model)
             .subscribe(
                 data => {
-                 //   this.alertService.success('Registration successful', true);
-                    this.router.navigate(['/dashboard']);
+                    this.alertService.success('Registration successful', true);
+                    this.router.navigate(['/login']);
                 },
                 error => {
-                  //  this.alertService.error(error);
+                    this.alertService.error(error);
+                    this.loading = false;
                 });
     }
 }
